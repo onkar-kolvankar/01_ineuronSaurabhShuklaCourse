@@ -6,7 +6,6 @@
 int main()
 {
     char input_character;
-    char a = '1';
     printf("Enter the character :");
     scanf("%c",&input_character);
 
@@ -14,18 +13,34 @@ int main()
     {
         printf("LowerCase Alphabet");
     }
-    else if( 65 <= input_character <= 90)
+    // Code for Uppercase Alphabets
+    else if( input_character >= 65 && input_character <= 90)
     {
         printf("UpperCase Alphabet");
     }
-    else if( 48 <= input_character <= 57)
+    // Code for Digits
+    else if(input_character >= 48 && input_character <= 57)
     {
         printf("Digits");
     }
-    // else if( 65 <= input_character <= 90)
-    // {
-    //     printf("UpperCase Alphabet");
-    // }
+
+    // Code for Special Character.
+    else if (input_character >= 33 && input_character<=47 )
+    {
+        printf("Special Character.");
+    }
+    else if(input_character >=58 && input_character <= 64)
+    {
+        printf("Special Character.");
+    }
+    else if(input_character >= 91 && input_character <= 96)
+    {
+        printf("Special Character.");
+    }
+    else if (input_character >= 123 && input_character <= 126)
+    {
+        printf("Special Character.");
+    }
     else
     {
         printf("These is not valid");
