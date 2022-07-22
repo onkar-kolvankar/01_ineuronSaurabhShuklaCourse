@@ -4,6 +4,8 @@
 #include<stdio.h>
 int main()
 {
+
+    // This method is more calculation based hence LESS EFFICIENT. Check other method
     int n1,n2,n3;
     printf("Enter 3 numbers to compare :");
     scanf("%d %d %d",&n1 ,&n2 ,&n3);
