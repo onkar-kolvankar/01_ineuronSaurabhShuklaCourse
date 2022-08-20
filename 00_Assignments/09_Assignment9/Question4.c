@@ -14,21 +14,32 @@ int main()
 
     while(1)
     {
-        printf("Select what operation you want to perform:\n");
-        printf("a. Check whether a given set of three numbers are lengths of an isosceles triangle or not.\n");
-        printf("b. Check whether a given set of three numbers are lengths of sides of a right angled triangle or not\n");
-        printf("c. Check whether a given set of three numbers are equilateral triangle or not\n");
-        printf("d. Exit\n");
+        printf("\nSelect what operation you want to perform:");
+        printf("\na. Check whether a given set of three numbers are lengths of an isosceles triangle or not.");
+        printf("\nb. Check whether a given set of three numbers are lengths of sides of a right angled triangle or not");
+        printf("\nc. Check whether a given set of three numbers are equilateral triangle or not");
+        printf("\nd. Exit\n");
 
+        /* CONCEPT -> fflush(stdin)
+          - scanf() does not work right with taking character inputs.
+        Whenever you try to take 'character' input with the scanf() ,you enter a character ex: 'd' then you press <Enter Key>
+        what happens is that 'd' is stored in the char variable ex: choice, AND <Enter Key> is stored in the [buffer] of scanf()
+        so when you have menu-driven program when switch runs once next time it runs it does not take input from user but takes input 
+        from the [buffer] which is <Enter Key> so none of case is run and default runs. After which in next time you can enter character value.
+        */
+        
+        
+        fflush(stdin);
         scanf("%c", &choice);
 
         switch (choice)
         {
             case 'a':
-                printf("Enter 3 sides:");
+                printf("\nEnter 3 sides:");
                 scanf("%d %d %d", &n1, &n2, &n3);
-
-                if (n1 == n2 || n1 == n3 || n2 == n3)
+                
+                // Two sides must be equal but 3rd side Must Not be equal.
+                if ((n1 == n2 && n1 != n3) || (n1 == n3 && n1 != n2) || (n2 == n3 && n2 != n1))
                 {
                     printf("\nIsoceles Triangle");
                 }
@@ -56,7 +67,7 @@ int main()
                 printf("Enter 3 sides:");
                 scanf("%d %d %d", &n1, &n2, &n3);
 
-                if (n1 == n2 && n2 == n3)
+                if (n1 == n2 && n2 == n3)       // COMMOM MISTAKE - if(n1==n2==n3)   THIS IS WRONG
                 {
                     printf("\nEquilateral Triangle");
                 }
