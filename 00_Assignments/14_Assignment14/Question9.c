@@ -7,7 +7,7 @@ int main()
     int arr_size = 5 , n;
     int arr[arr_size];
 
-    printf("Enter array elements :");
+    printf("Enter %d array elements :",arr_size);
     for(int i = 0 ; i<arr_size ; i++)
     {
         scanf("%d", &arr[i]);
@@ -20,6 +20,10 @@ int main()
     {
         for(int i = n - 1 ; i >= 0 ; i-- )
             printf("%d ", arr[i]);
+    }
+    else
+    {
+        printf("You entered value of n is not in range.");
     }
     
 

@@ -6,7 +6,7 @@ int main()
     int arr_size = 5;
     int num_array[arr_size] , copied_array[arr_size];
 
-    printf("Enter elements of array:");
+    printf("Enter %d elements of array:",arr_size);
     for(int i = 0 ; i<arr_size ; i++)
     {
         scanf("%d", &num_array[i]);
