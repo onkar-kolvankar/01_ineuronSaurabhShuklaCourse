@@ -3,34 +3,50 @@
 
 int main()
 {
-    int mtx[2][3] = {{7, 3, 4, 5}, {2, 1, 3, 14}};
+    int m_row , m_col , t_row , t_col;
+    printf("Enter how many rows are there in a matrix :");
+    scanf("%d", &m_row);
+    printf("Enter how many cols are there in a matrix :");
+    scanf("%d", &m_col);
 
-    int row_elmts, col_elmts;
+    t_row = m_col;
+    t_col = m_row;
 
-    printf("Enter the number of elements in row of matrix :");
-    scanf("%d", row_elmts);
-    printf("Enter the number of elements in row of matrix :");
-    scanf("%d", col_elmts);
+    int mtx[m_row][m_col] , transpose_mtx[t_row][t_col];
 
-    int transpose_mtx[col_elmts - 1][row_elmts - 1];
-
-    for (int i = 0; i < row_elmts; i++)
+    // take matrix input
+    for (int i = 0; i < m_row ; i++)
     {
-        for(int j = 0 ; j<col_elmts ; j++)
+        for(int j  = 0 ; j < m_col ; j++)
         {
-            transpose_mtx[j][i] = mtx[i][j];
+            scanf("%d", &mtx[i][j]);
         }
+    }
+    // Assign elements in transpose matrix
+    for (int i = 0; i < t_row; i++)
+        for (int j = 0; j < t_col; j++)
+            transpose_mtx[i][j] = mtx[j][i];
+
+    // Print elements from transpose mtx.
+    for(int i = 0 ; i<t_row ; i++)
+    {
+        for(int j = 0 ; j < t_col ; j++)
+        {
+            printf("%d ", transpose_mtx[i][j]);
+        }
+        printf("\n");
     }
 
     return 0;
 }
-void printMtx(int mtx1[][], int rows,int cols)
-{
-    for (int i = 0;  i < rows ; i++)
-    {
-        for (int j = 0; j < cols; j++)
-        {
-            printf("%d ", mtx1[i][j]);
-        }
-    }
-}
+// void printMtx(int mtx[][], int rows, int cols)
+// {
+//     for(int i = 0 ; i<rows ; i++)
+//     {
+//         for(int j = 0 ; j < cols ; j++)
+//         {
+//             printf("%d ", mtx[i][j]);
+//         }
+//         printf("\n");
+//     }
+// }
