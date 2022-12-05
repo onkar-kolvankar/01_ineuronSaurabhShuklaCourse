@@ -84,7 +84,7 @@ void revStringWordWise(char str[],int string_size)
 
 int main()
 {
-    char str[40] = "   a b   sds c d e   ";
+    char str[40] = "Onkar is in mca";
     int str_size;
     for(str_size = 0 ; str[str_size] ; str_size++);
 

@@ -2,3 +2,11 @@
 // between the given two words in the list of words.
 // (Example : s = {“the”,”quick”,”brown”,”fox”,”quick”}
 //  word1 = “the”, word2 = “fox”, OUTPUT : 1 )
+
+#include<stdio.h>
+
+int main()
+{
+
+    return 0;
+}
