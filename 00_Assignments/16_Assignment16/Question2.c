@@ -8,44 +8,55 @@ a[20] a[21] a[22]          b[20] b[21] b[22]            (a[20]*b[00]) + (a[21]*b
 // void printArray(int[3][3], int);
 int main()
 {
-    int mtx1[3][3], mtx2[3][3], prod_mtx[3][3];
-    mtx1[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, mtx2[3][3] = {{3, 5, 1}, {6, 3, 8}, {1, 8, 7}} ;
+    int mtx1[3][3] ,mtx2[3][3] ,prod_mtx[3][3];
+    // int mtx1[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, mtx2[3][3]  = {{3, 5, 1}, {6, 3, 8}, {1, 8, 7}}, prod_mtx[3][3];
     int mtx_size = 3;
 
     // CODE - To take input of both matrices.
 
-    // printf("Please enter %d elements of an Array 1 :",mtx_size);
-    // for(int i = 0 ; i < mtx_size ; i++)
-    // {
-    //     for (int j = 0; j < mtx_size; j++)
-    //     {
-    //         scanf("%d", &mtx1[i][j]);
-    //     }
-    // }
-
-    // printf("\nPlease enter %d elements of an Array 2 :",mtx_size);
-    // for(int i = 0 ; i < mtx_size ; i++)
-    // {
-    //     for (int j = 0; j < mtx_size; j++)
-    //     {
-    //         scanf("%d", &mtx2[i][j]);
-    //     }
-    // }
-
-    // CODE -  to perform matrix multiplication.
-    printf("\nProduct of these matrices is :\n"); 
-    for(int i = 0 ; i < 3 ; i++)
-    {
-        
-    }
-
-
-    // CODE - To print a matrix
+    printf("Please enter %d elements of an Array 1 :",mtx_size);
     for(int i = 0 ; i < mtx_size ; i++)
     {
         for (int j = 0; j < mtx_size; j++)
         {
-            printf("%d ", mtx1[i][j]); 
+            scanf("%d", &mtx1[i][j]);
+        }
+    }
+
+    printf("\nPlease enter %d elements of an Array 2 :",mtx_size);
+    for(int i = 0 ; i < mtx_size ; i++)
+    {
+        for (int j = 0; j < mtx_size; j++)
+        {
+            scanf("%d", &mtx2[i][j]);
+        }
+    }
+
+    // CODE -  to perform matrix multiplication.
+    // C[i][j] = summation from k = 0 to 2( A[i][k]*B[k][j] ) 
+    printf("\nProduct of these matrices is :\n"); 
+    int no_sum;
+    for(int i = 0 ; i < 3 ; i++)
+    {
+        for(int j = 0 ; j < 3 ; j++)
+        {
+            no_sum = 0;
+            for(int k = 0  ; k < 3 ; k++)
+            {
+                no_sum += mtx1[i][k] * mtx2[k][j];
+            }
+            prod_mtx[i][j] = no_sum;
+        }
+    }
+
+
+    // CODE - To print a matrix
+    printf("Product of matrix :\n");
+    for(int i = 0 ; i < mtx_size ; i++)
+    {
+        for (int j = 0; j < mtx_size; j++)
+        {
+            printf("%d ", prod_mtx[i][j]); 
         }
         printf("\n");
     }
