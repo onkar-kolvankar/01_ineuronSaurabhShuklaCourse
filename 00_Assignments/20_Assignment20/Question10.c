@@ -8,7 +8,7 @@ int main()
 
     str_ptr = str;
     int str_len = 0;
-    for(str_len ; str_ptr[str_len] ; str_len++);
+    for(str_len ; str_ptr[str_len] ; str_len++); //Calculate string length
 
     for(int i = str_len-1 ; i >= 0 ; i--)
         printf("%c",str_ptr[i]);
