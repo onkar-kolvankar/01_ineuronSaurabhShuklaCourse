@@ -1,6 +1,6 @@
 // Write a program to input and print text using dynamic memory allocation
-// WAY 2 = BETTER THAN THIS.
-
+// NOTE - No need to use the malloc() before using realloc().
+// Can use the realloc() function directly.
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
@@ -14,8 +14,6 @@ int main()
     char *ptrChar = NULL;
     printf("Enter the text :");
 
-    ptrChar = (char *)malloc(sizeof(char));
-
     while(true)
     {
         tempChar = getchar();
@@ -23,36 +21,31 @@ int main()
         {
             break;
         }
-        // (tempChar = getchar()) != '\n'
-
-        charCount++;
-        printf("\nEntered character :%c",tempChar);
         
-        ptrChar = (char *)realloc(ptrChar, charCount * sizeof(char));
+        // printf("\nEntered character :%c",tempChar);
+        
+        ptrChar = (char *)realloc(ptrChar, (charCount) * sizeof(char));
 
         *(ptrChar + charCount) = tempChar;
 
-        
-        
+        charCount++;    
 
     }
 
-    charCount++;
     ptrChar = (char *)realloc(ptrChar, charCount * sizeof(char));
     *(ptrChar + charCount) = '\0';
 
-    
-
     // print the string.
-    
-    int i = 1;
+    printf("\nEntered text = ");
+    int i = 0;
     while(ptrChar[i])
     {
-        printf("\n i = %d => %c",i,ptrChar[i]);
+        // printf("\n i = %d => %c",i,ptrChar[i]);
+        printf("%c",ptrChar[i]);
         i++;
     }
 
-    printf("\n i = %d => %c",0,*ptrChar);
+    // printf("\n i = %d => %c",0,*ptrChar);
 
     free(ptrChar);
     return 0;
