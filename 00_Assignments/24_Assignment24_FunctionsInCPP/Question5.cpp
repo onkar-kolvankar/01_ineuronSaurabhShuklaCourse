@@ -1,5 +1,6 @@
 // Define a function to check whether a given number is a term in a Fibonacci series or
 // not
+// 1 1 2 3 5 8 13 21
 #include<iostream>
 using namespace std;
 void inFibbonnacci(int);

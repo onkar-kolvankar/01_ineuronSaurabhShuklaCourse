@@ -1,5 +1,6 @@
 // Define a function to check whether a given number is a Prime number or not.
 #include<iostream>
+#include<cmath>
 using namespace std;
 inline bool checkPrime(int);
 
@@ -18,7 +19,7 @@ int main()
 }
 bool checkPrime(int a)
 {
-    for(int i = 2 ; i < a/2 ; i++)
+    for(int i = 2 ; i <= sqrt(a) ; i++)
     {
         if(a % i == 0)
         {

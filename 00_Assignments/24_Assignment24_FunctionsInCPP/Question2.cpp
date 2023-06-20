@@ -23,5 +23,11 @@ int getMaxValueDigit(int a)
         
         a /= 10;
     }
+    if(a > highestDigit)
+    {
+        highestDigit = a;
+    }
+
+
     return highestDigit;
 }
