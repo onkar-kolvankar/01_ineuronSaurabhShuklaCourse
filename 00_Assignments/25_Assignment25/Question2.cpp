@@ -47,10 +47,11 @@ int main()
     else 
     {
         cout << endl << "Successfull  data submission.";
+        m1.displayTime();
     }
 
     
-    m1.displayTime();
+    
 
     return 0;
 }

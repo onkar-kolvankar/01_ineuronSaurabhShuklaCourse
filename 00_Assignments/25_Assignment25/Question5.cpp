@@ -6,18 +6,32 @@ using namespace std;
 
 class ReverseNumber
 {
+    int num , reverseNum;
     public:
-        int reverseNo(int num)
+        void setNum(int x)
         {
-            int reverse = 0 , rem;
-            while(num)
+            num = x;
+        }
+        int getNum()
+        {
+            return num;
+        }
+        int getReverse()
+        {
+            return reverseNum;
+        }
+
+        void calReverse()
+        {
+            int reverse = 0 , rem ,tempNum = num;
+            while(tempNum)
             {
-                rem = num % 10;
+                rem = tempNum % 10;
                 reverse = (reverse * 10) + rem;
-                num /= 10;
+                tempNum /= 10;
             }
 
-            return reverse;
+            reverseNum = reverse;
 
 
         }
@@ -29,6 +43,9 @@ int main()
     int n;
     cout << "Enter a number:";
     cin >> n;
-    cout << endl << r1.reverseNo(n);
+
+    r1.setNum(n);
+    r1.calReverse();
+    cout << "num = " << r1.getNum() << " reverse = " << r1.getReverse();
     return 0;
 }

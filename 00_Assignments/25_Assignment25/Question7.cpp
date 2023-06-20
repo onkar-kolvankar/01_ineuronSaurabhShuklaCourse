@@ -6,34 +6,46 @@ using namespace std;
 
 class Greatest
 {
-    int a , b , c;
+    float a , b , c ,largest;
     public:
-        void setNos(int l , int m , int n)
+        void setNos(float l , float m , float n)
         {
             a = l;
             b = m;
             c = n;
         }
-        void getNos()
+        float getNum1()
         {
-            cout<< a << " " << b << " " << c;
+            return a;
         }
-        int getGreatest()
+        float getNum2()
+        {
+            return b;
+        }
+        float getNum3()
+        {
+            return c;
+        }
+        float getLargest()
+        {
+            return largest;
+        }
+        void getGreatest()
         {
             if(a >= b && a >= c)
-                return a;
+                largest = a;
             else if(b >= a && b >= c)
-                return b;
+                largest = b;
             else 
-                return c;
+                largest = c;
         }
 };
 
 int main()
 {
     Greatest g1;
-    g1.setNos(43,43,43);
-    g1.getNos();
-    cout << endl << "Greatest no = " <<g1.getGreatest();
+    g1.setNos(1043,43,478);
+    g1.getGreatest();
+    cout << endl << "Greatest no = " <<g1.getLargest();
     return 0;
 }

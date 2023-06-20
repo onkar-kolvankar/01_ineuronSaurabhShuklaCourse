@@ -5,7 +5,7 @@ using namespace std;
 
 class Area
 {
-    float radius= 0, length = 0, breadth=0 , base=0 , height=0;
+    float radius= 0, length = 0, breadth=0 , base=0 , height=0 ,area;
     public:
         void setCircleRadius(float r)
         {
@@ -22,30 +22,39 @@ class Area
             height = h;
         }
 
-        float getCircleArea()
+        float getArea()
         {
-            return 3.14 * radius * radius;
+            return area;
         }
-        float getRectangleArea()
+
+        void getCircleArea()
         {
-            return length * breadth;
+            area =  3.14 * radius * radius;
         }
-        float getTriangleArea()
+        void getRectangleArea()
         {
-            return 0.5 * base * height;
+            area = length * breadth;
+        }
+        void getTriangleArea()
+        {
+            area = 0.5 * base * height;
         }
 };
 
 int main()
 {
-    Area a;
-    a.setCircleRadius(5);
-    a.setRectangleSides(4,7);
-    a.setTriangleBaseHeight(4,10);
+    Area a1,a2,a3;
+    a1.setCircleRadius(5);
+    a2.setRectangleSides(4,7);
+    a3.setTriangleBaseHeight(4,10);
 
-    cout << endl << "Area of Circle = " << a.getCircleArea();
-    cout << endl << "Area of Rectangle = " << a.getRectangleArea();
-    cout << endl << "Area of Triangle = " << a.getTriangleArea();
+    a1.getCircleArea();
+    a2.getRectangleArea();
+    a3.getTriangleArea();
+
+    cout << endl << "Area of Circle = " << a1.getArea();
+    cout << endl << "Area of Rectangle = " << a2.getArea();
+    cout << endl << "Area of Triangle = " << a3.getArea();
 
     return 0;
 }

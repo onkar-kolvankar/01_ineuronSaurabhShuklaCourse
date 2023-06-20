@@ -6,7 +6,7 @@ using namespace std;
 class Rectangle
 {
     private:
-        float length , breadth;
+        float length , breadth , area;
 
     public:
         void setRectangle(float a , float b)
@@ -14,13 +14,23 @@ class Rectangle
             length = a ;
             breadth = b;
         }
-        void displayRectangleSides()
+        float getLength()
         {
-            cout << endl << "Length of Rectangle = " << length << " Breadth of Rectangle = " << breadth;
+            return length;
         }
-        void findRectangleArea()
+        float getBreadth()
         {
-            cout << endl << "Area of Rectangle = " << length * breadth;
+            return breadth;
+        }
+
+        float getArea()
+        {
+            return area;
+        }
+
+        void calRectangleArea()
+        {
+            area = length * breadth;
         }
 
 };
@@ -30,8 +40,8 @@ int main()
 
     Rectangle r1;
     r1.setRectangle(4,5);
-    r1.displayRectangleSides();
-    r1.findRectangleArea();
+    r1.calRectangleArea();
+    cout << "Length = " << r1.getLength() << " Breadth = " << r1.getBreadth() << " Area = " << r1.getArea();
 
     return 0;
 }

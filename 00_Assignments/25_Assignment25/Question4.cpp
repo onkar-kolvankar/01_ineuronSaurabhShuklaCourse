@@ -6,15 +6,42 @@ using namespace std;
 
 class LargestNumber
 {
+    float a , b, c , largest;
     public:
-        int getLargest(int a , int b , int c)       
+        void setNums(float x,float y,float z)
+        {
+            a = x;
+            b = y;
+            c = z;
+        }
+        float getNum1()
+        {
+            return a;
+        }
+        float getNum2()
+        {
+            return b;
+        }
+        float getNum3()
+        {
+            return c;
+        }
+
+        float getLargest()
+        {
+            return largest;
+        }
+
+
+
+        void calLargest()       
         {
             if(a >= b && a >= c)
-                return a;
+                largest = a;
             else if(b >= a && b >= c)
-                return b;
+                largest =  b;
             else 
-                return c;
+                largest =  c;
         }
 };
 
@@ -25,7 +52,10 @@ int main()
     cout << "Enter the 3 nos:";
     cin >> a >> b >> c;
 
-    cout << endl << "Largest no :" << l1.getLargest(a,b,c);
+    l1.setNums(a,b,c);
+    l1.calLargest();
+
+    cout << endl << "Largest no :" << l1.getLargest();
 
 
     return 0;
