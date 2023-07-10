@@ -55,12 +55,12 @@ class Complex
             return temp;
         }
 
-        int operator==(Complex c2)
+        bool operator==(Complex c2)
         {
             if(a == c2.a && b == c2.b)
-                return 1;
+                return true;
             else
-                return 0;
+                return false;
         }
 };
 
@@ -76,18 +76,18 @@ int main()
     c3 = c1 * c2;
     c3.displayComplex();
 
-    if((c1 == c2) == 0){
-        cout << "c1 is not equal to c2." << endl;
+    if(c1 == c2){
+        cout << "c1 is equal to c2." << endl;
     }
     else{
-        cout << "c1 equal to c2" << endl;
+        cout << "c1 not equal to c2" << endl;
     }
     
-    if((c4 == c2)==0){
-        cout << "c4 is not equal to c2." << endl;
+    if(c4 == c2){
+        cout << "c4 equal to c2." << endl;
     }
     else{
-        cout << "c4 equal to c2" << endl;
+        cout << "c4 not equal to c2" << endl;
     }
 
     return 0;

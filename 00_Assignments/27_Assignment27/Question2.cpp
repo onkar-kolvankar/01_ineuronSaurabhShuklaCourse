@@ -4,43 +4,66 @@
 using namespace std;
 
 class Complex{
-    int a , b;
+    int real , img;
 
     public:
         Complex(){}
 
         Complex(int x , int y)
         {
-            a = x;
-            b = y;
+            real = x;
+            img = y;
         }
-
         void setComplex(int x , int y)
         {
-            a = x;
-            b = y;
-        }
-        int getReal()
-        {
-            return a;
-        }
-        int getImg()
-        {
-            return b;
+            real = x;
+            img = y;
         }
         void displayComplex()
         {
-            cout << a << " + " << b << "i";
+            cout << real << " + " << img << "i" << endl;
         }
 
         // operator overloading
+
+        // Post increament. needs the dummy variable to differentiate bw post and pre
+        Complex operator++(int dummny_var)
+        {
+            Complex temp;
+            temp.real = real++;
+            temp.img = img;
+            return temp;
+        }
+        // pre increament
         Complex operator++()
         {
             Complex temp;
-            temp.a = a++;
-            temp.b = b;
+            temp.real = ++real;
+            temp.img = img;
             return temp;
         }
+
+        // Post decreament
+        Complex operator--(int dummny_var)
+        {
+            Complex temp;
+            temp.real = real--;
+            temp.img = img;
+            return temp;
+        }
+
+        // pre decreament
+        Complex operator--()
+        {
+            Complex temp;
+            temp.real = --real;
+            temp.img = img;
+            return temp;
+        }
+
+
+
+
 };
 
 int main()
@@ -48,7 +71,44 @@ int main()
     Complex c1(2,3),c2;
 
     c2 = c1++;
+
+    cout << "c2 = ";
     c2.displayComplex();
+    cout << "c1 = ";
+    c1.displayComplex();
+
+    c2 = ++c1;
+    cout << "c2 = ";
+    c2.displayComplex();
+    cout << "c1 = ";
+    c1.displayComplex();
+
+    c1++;
+    cout << endl;
+    cout << "c1 = ";
+    c1.displayComplex();
+
+    cout<< "Decreament operations" << endl;
+
+    c2 = c1--;
+    cout << "c2 = ";
+    c2.displayComplex();
+    cout << "c1 = ";
+    c1.displayComplex();
+
+    c2 = --c1;
+    cout << "c2 = ";
+    c2.displayComplex();
+    cout << "c1 = ";
+    c1.displayComplex();
+
+    c1--;
+    cout << endl;
+    cout << "c1 = ";
+    c1.displayComplex();
+
+
+    
 
     return 0;
 }
