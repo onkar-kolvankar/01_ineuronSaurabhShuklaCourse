@@ -229,7 +229,7 @@ int main()
     l.insertAtBegin(50);
     l.insertAtBegin(60);
     
-    l.insertAtMiddle(100,1);
+    l.insertAtMiddle(100,100);
     l.insertAtMiddle(200,2);
     
     // l.insertAtMiddle(300,);
