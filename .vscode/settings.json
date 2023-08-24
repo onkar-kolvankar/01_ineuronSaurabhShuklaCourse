@@ -3,6 +3,7 @@
         "stdio.h": "c",
         "system_error": "c",
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "xstring": "cpp"
     }
 }
