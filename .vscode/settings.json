@@ -4,6 +4,8 @@
         "system_error": "c",
         "ostream": "cpp",
         "iostream": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "iterator": "cpp"
     }
 }
