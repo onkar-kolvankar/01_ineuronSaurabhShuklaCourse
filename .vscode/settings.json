@@ -1,11 +1,6 @@
 {
+    "cmake.configureOnOpen": false,
     "files.associations": {
-        "stdio.h": "c",
-        "system_error": "c",
-        "ostream": "cpp",
-        "iostream": "cpp",
-        "xstring": "cpp",
-        "xutility": "cpp",
-        "iterator": "cpp"
+        "iostream": "cpp"
     }
 }
