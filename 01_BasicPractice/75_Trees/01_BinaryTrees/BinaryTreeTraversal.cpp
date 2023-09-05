@@ -1,5 +1,6 @@
 // code for the preorder,inorder,postorder traversal in binary tree
 #include<iostream>
+#include<queue>
 
 using namespace std;
 
@@ -45,6 +46,31 @@ class Node{
             cout << root -> data << " " ;
         }
 
+        void levelOrder(Node *root)
+        {
+            if(root == NULL)
+                return ;
+
+            queue<Node *> q;
+            q.push(root);
+
+            while(q.empty() == false)
+            {
+                Node *temp = q.front();
+                cout << temp->data << " " ;
+
+                if(temp->left != NULL){
+                    q.push(temp->left);
+                }
+                if(temp -> right != NULL)
+                {
+                    q.push(temp -> right);
+                }
+
+                q.pop();
+            }
+        }
+
 
 };
 
@@ -66,6 +92,9 @@ int main()
     root->inorder(root);
     cout << endl;
     root->postorder(root);
+    cout << endl;
+
+    root->levelOrder(root);
     cout << endl;
 
     return 0;
