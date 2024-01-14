@@ -88,12 +88,6 @@ class Alphabetree
 
                     currentNode->setNextCharRef(newNode,checkIndex);
                     currentNode = newNode;
-                    // check if it is last character
-                    if(i == word.length() - 1)
-                    {
-                        // it is last character
-                        currentNode->setIsEndOfWord(true);
-                    }
 
                 }
                 else
@@ -101,13 +95,13 @@ class Alphabetree
                     // the character's reference is present in the current node
                     // 1. go to that node
                     currentNode = currentNode->getNextCharRef(checkIndex);
-                    // 2. check if it is end of node
-                    if(i == word.length() - 1)
-                    {
-                        // it is last character
-                        currentNode->setIsEndOfWord(true);
-                    }
+                }
 
+                // check if it is last character
+                if(i == word.length() - 1)
+                {
+                    // it is last character
+                    currentNode->setIsEndOfWord(true);
                 }
             }
             cout << "Word inserted in trie" << endl;
